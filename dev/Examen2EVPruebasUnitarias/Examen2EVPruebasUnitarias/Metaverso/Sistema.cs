@@ -6,26 +6,34 @@ namespace Metaverso
     {
         public string Saludo(string nombre) => $"Saludos {numero}!";
 
+        
         public int numero { get; }
-        static void Metaverso()
+        public string Metaverso(int numero)
         {
             var sistema = new Sistema();
 
-            if (sistema.numero % 5 == 0 & sistema.numero % 3 == 0 )
+            if (numero % 5 == 0 && numero % 3 == 0 )
             {
-                Console.WriteLine("Metaverso");
+                return "metaverso";
             }
-            else if (sistema.numero % 5 == 0)
+            else if (numero % 5 == 0)
             {
-                Console.WriteLine("Meta");
+                return "meta";
             }
-            else if (sistema.numero % 3 == 0)
+            else if (numero % 3 == 0)
             {
-                Console.WriteLine("Verso");
+                return "verso";
             }
             else{
-                Console.WriteLine($"{sistema.numero}");
+                return $"{numero}";
             }
+        }
+        public string Metaverso2 (int[]array){
+            string cadena="";
+            for(int i=0;i<array.Length;i++){
+                cadena = cadena + Metaverso(array[i]);
+            }
+            return cadena;
         }
     }
 }
